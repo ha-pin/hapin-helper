@@ -1,10 +1,11 @@
-import { app, BrowserWindow } from "electron"
+import { app, BrowserWindow, Menu } from "electron"
 import path from "path"
 
 const createWindow = () => {
 	const mainWindow = new BrowserWindow({
 		width: 400,
 		height: 300,
+        hasShadow: true,
 		webPreferences: {
 			// preload: path.join(__dirname, "")
 			nodeIntegration: true
@@ -12,12 +13,14 @@ const createWindow = () => {
 	})
 
     if (process.env.NODE_ENV === "development") {
-        console.log(true)
         mainWindow.loadURL("http://localhost:3000")
     } else {
         mainWindow.loadFile("dist/index.html")
     }
 }
+
+// 关掉 默认Menu
+Menu.setApplicationMenu(null)
 
 app.whenReady().then(() => {
 	createWindow()
