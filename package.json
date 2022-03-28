@@ -1,0 +1,43 @@
+{
+  "name": "hapin-helper",
+  "version": "1.0.0",
+  "description": "Hapin Helper",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "dev:electron": "electron .",
+    "dev:vite": "vite",
+    "dev:vite:preview": "vite build",
+    "dev:scripts": "tsup --watch",
+    "build:vite": "vite build",
+    "build:electron": "",
+    "build:scripts": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ha-pin/hapin-helper.git"
+  },
+  "author": "Herbert He<Herbert.He0229@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ha-pin/hapin-helper/issues"
+  },
+  "homepage": "https://github.com/ha-pin/hapin-helper#readme",
+  "dependencies": {
+    "electron": "^17.2.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "@tsconfig/svelte": "^2.0.1",
+    "@types/node": "^17.0.23",
+    "cross-env": "^7.0.3",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.2.7",
+    "svelte-preprocess": "^4.9.8",
+    "tslib": "^2.3.1",
+    "tsup": "^5.12.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}
