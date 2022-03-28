@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/ha-pin/hapin-helper#readme",
   "dependencies": {
-    "electron": "^17.2.0"
+    "electron": "^17.2.0",
+    "svelte-i18n": "^3.3.13"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
