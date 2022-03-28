@@ -11,7 +11,12 @@ const createWindow = () => {
 		}
 	})
 
-	mainWindow.loadFile("dist/index.html")
+    if (process.env.NODE_ENV === "development") {
+        console.log(true)
+        mainWindow.loadURL("http://localhost:3000")
+    } else {
+        mainWindow.loadFile("dist/index.html")
+    }
 }
 
 app.whenReady().then(() => {
