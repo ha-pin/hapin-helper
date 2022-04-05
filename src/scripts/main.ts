@@ -1,6 +1,8 @@
 import { app, BrowserWindow, Menu } from "electron"
 import path from "path"
 
+const isDev = process.env.NODE_ENV === "development"
+
 const createWindow = () => {
 	const mainWindow = new BrowserWindow({
 		width: 400,
@@ -12,15 +14,17 @@ const createWindow = () => {
 		}
 	})
 
-    if (process.env.NODE_ENV === "development") {
+    if (isDev) {
         mainWindow.loadURL("http://localhost:3000")
     } else {
         mainWindow.loadFile("dist/index.html")
     }
 }
 
-// 关掉 默认Menu
-Menu.setApplicationMenu(null)
+if (!isDev) {
+    // 关掉 默认Menu
+    Menu.setApplicationMenu(null)
+}
 
 app.whenReady().then(() => {
 	createWindow()

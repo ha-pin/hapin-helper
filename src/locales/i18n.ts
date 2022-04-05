@@ -1,10 +1,11 @@
 // i18n 支持
 import { register, init, getLocaleFromNavigator } from "svelte-i18n"
 
-register("cn", () => import("./cn.json"))
-register("kz", () => import("./kz.json"))
+register("zh-CN", () => import("./cn.json"))
+register("kk", () => import("./kz.json"))
+register("en", () => import("./en.json"))
 
-init({
-    fallbackLocale: "cn",
+export const setup = () => init({
+    fallbackLocale: "en",
     initialLocale: getLocaleFromNavigator(),
 })
